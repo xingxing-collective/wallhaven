@@ -1,0 +1,52 @@
+{
+	"pages": [
+		{
+			"path": "pages/toplist/index",
+			"style": {
+				"navigationBarTitleText": "wallhaven"
+			}
+		},{
+			"path": "pages/random/index",
+            "style": {
+                "navigationBarTitleText": "wallhaven"
+            }
+		},{
+			"path": "pages/latest/index",
+            "style": {
+                "navigationBarTitleText": "wallhaven"
+            }
+		},{
+			"path": "pages/mine/index",
+            "style": {
+                "navigationBarTitleText": "wallhaven"
+            }
+		}
+	],
+	"globalStyle": {
+		"navigationBarBackgroundColor": "#000000",
+		"navigationStyle":"custom",
+		"backgroundColor": "#000000",
+		"backgroundTextStyle":"dark"
+	},
+	"tabBar": {
+		"custom":true,
+		"list": [
+			{
+				"pagePath": "pages/toplist/index",
+				"text": "Toplist"
+			},
+			{
+				"pagePath": "pages/random/index",
+				"text": "Random"
+
+			},{
+				"pagePath": "pages/latest/index",
+                "text": "Latest"
+			},{
+				"pagePath": "pages/mine/index",
+                "text": "Mine"
+			}
+		]
+	},
+	"usingComponents": {}
+}
