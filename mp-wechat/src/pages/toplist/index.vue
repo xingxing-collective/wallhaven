@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
-import { useLatest, type WallHaven } from "@/composables/wallhaven";
+import { useLatest } from "@/composables/wallhaven";
 import { onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
 
-const latest = ref<Array<WallHaven>>([]);
+const latest = ref<Array<any>>([]);
 
 useTabBar(0);
 
