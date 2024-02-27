@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
-useTabBar(3);
+useTabBar(4);
 </script>
 <template>
     <div class="container">

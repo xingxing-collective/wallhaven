@@ -15,6 +15,6 @@
     "url": "https://github.com/xingxingmofashu/wallhaven/issues"
   },
   "scripts": {
-    "dev:mp-wechat": ""
+    "dev:mp-wechat": "pnpm run -C mp-wechat dev"
   }
 }

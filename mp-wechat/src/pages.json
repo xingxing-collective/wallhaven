@@ -16,6 +16,11 @@
                 "navigationBarTitleText": "wallhaven"
             }
 		},{
+			"path": "pages/hot/index",
+            "style": {
+                "navigationBarTitleText": "wallhaven"
+            }
+		},{
 			"path": "pages/mine/index",
             "style": {
                 "navigationBarTitleText": "wallhaven"
@@ -42,6 +47,9 @@
 			},{
 				"pagePath": "pages/latest/index",
                 "text": "Latest"
+			},{
+				"pagePath": "pages/hot/index",
+                "text": "Hot"
 			},{
 				"pagePath": "pages/mine/index",
                 "text": "Mine"
