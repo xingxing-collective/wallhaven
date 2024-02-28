@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
-import { useLatest } from "@/composables/wallhaven";
+import { useTopList, useGetByImageId } from "@/composables/wallhaven";
 import { onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
 import type { WallHavenData } from "~/types";
 
-const latest = ref<Array<WallHavenData>>([]);
+const topList = ref<WallHavenData[]>([]);
 
 useTabBar(0);
 
 onShow(async () => {
-    const { data } = await useLatest();
-    latest.value = data.data;
+    const data = await useTopList()
+    topList.value = data.map(x => x.data.data as WallHavenData)
 })
-
 </script>
 <template>
     <div class="container">
@@ -21,7 +20,7 @@ onShow(async () => {
         <div class="content">
             <div class="thumbs">
                 <section class="thumb-listing-page">
-                    <div class="thumb" v-for="item in latest" :key="item.id">
+                    <div class="thumb" v-for="item in topList" :key="item.id">
                         <img class="thumb-img" :src="item.thumbs.small">
                     </div>
                 </section>
@@ -42,13 +41,14 @@ onShow(async () => {
         overflow: auto;
         max-height: 77vh;
         position: relative;
-        
+
         .thumbs {
             .thumb-listing-page {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
                 justify-content: center;
+
                 .thumb {
                     width: 10rem;
                     height: 7.5rem;
