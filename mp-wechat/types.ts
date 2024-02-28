@@ -1,7 +1,7 @@
 enum Purity {
     sfw = "sfw"
 }
-type WallHavenData = {
+export type WallHavenData = {
     id: string
     category: string
     colors: string[]
@@ -25,7 +25,7 @@ type WallHavenData = {
     url: string
     views: number
 };
-type WallHavenMeta = {
+export type WallHavenMeta = {
     current_page: number
     last_page: number
     per_page: number
