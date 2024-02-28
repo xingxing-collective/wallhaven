@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
-import { useTopList, useGetByImageId } from "@/composables/wallhaven";
+import { useTopList } from "@/composables/wallhaven";
 import { onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
+import Thumbs from "@/components/thumbs.vue";
 import type { WallHavenData } from "~/types";
 
-const topList = ref<WallHavenData[]>([]);
+const topList = ref<any>([]);
 
 useTabBar(0);
 
@@ -16,23 +17,36 @@ onShow(async () => {
 </script>
 <template>
     <div class="container">
-        <div class="header"></div>
+        <div class="header">
+            <div class="listing-header">{{ 'Toplist' }}</div>
+        </div>
         <div class="content">
-            <div class="thumbs">
-                <section class="thumb-listing-page">
-                    <div class="thumb" v-for="item in topList" :key="item.id">
-                        <img class="thumb-img" :src="item.thumbs.small">
-                    </div>
-                </section>
-            </div>
+            <Thumbs :data="topList"  />
         </div>
     </div>
+    
 </template>
 <style scoped lang="scss">
+
 .container {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+
     .header {
         width: 100%;
         height: 5.5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 0.5rem;
+
+        .listing-header {
+            height: 2.5rem;
+            line-height: 2.5rem;
+            padding-left: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            background-image: radial-gradient(400px 80px at 0px top, rgba(183, 96, 240, .3), transparent);
+        }
     }
 
     .content {
@@ -42,37 +56,7 @@ onShow(async () => {
         max-height: 77vh;
         position: relative;
 
-        .thumbs {
-            .thumb-listing-page {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                justify-content: center;
-
-                .thumb {
-                    width: 10rem;
-                    height: 7.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    &:nth-child(odd) {
-                        padding-right: 0.25rem;
-                    }
-
-                    &:nth-child(even) {
-                        padding-left: 0.25rem;
-                    }
-
-                    .thumb-img {
-                        width: 10rem;
-                        height: 7.5rem;
-                        object-fit: fill;
-                        border-radius: 1.5rem;
-                    }
-                }
-            }
-        }
+       
     }
 }
 </style>
