@@ -21,6 +21,11 @@
                 "navigationBarTitleText": "wallhaven"
             }
 		},{
+			"path": "pages/preview/index",
+            "style": {
+                "navigationBarTitleText": "wallhaven"
+            }
+		},{
 			"path": "pages/mine/index",
             "style": {
                 "navigationBarTitleText": "wallhaven"

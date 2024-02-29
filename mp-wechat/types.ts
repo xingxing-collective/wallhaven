@@ -11,6 +11,14 @@ type Tag = {
     purity: Purity
 }
 
+export type WallHavenPreview = {
+    [key in keyof Pick<WallHavenData, 'id' | 'favorites' | 'file_type'>]: string
+} & {
+    preview: string
+    dimension: string
+}
+
+
 export type WallHavenData = {
     id: string
     category: string

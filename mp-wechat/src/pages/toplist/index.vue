@@ -1,33 +1,35 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
 import { useTopList } from "@/composables/wallhaven";
-import { onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
 import Thumbs from "@/components/thumbs.vue";
-import type { WallHavenData } from "~/types";
+import type { WallHavenPreview } from "~/types";
+import { watch } from "vue";
 
-const topList = ref<any>([]);
+const topList = ref<Array<WallHavenPreview>>([]);
+const page = ref(1);
 
 useTabBar(0);
 
-onShow(async () => {
-    const data = await useTopList()
-    topList.value = data.map(x => x.data.data as WallHavenData)
+watch(page, async () => {
+    const data = await useTopList(page.value)
+    topList.value.push(...data)
+}, {
+    immediate: true
 })
+
 </script>
 <template>
     <div class="container">
         <div class="header">
             <div class="listing-header">{{ 'Toplist' }}</div>
         </div>
-        <div class="content">
-            <Thumbs :data="topList"  />
-        </div>
+        <scroll-view scroll-y class="content" @scrolltolower="page++;">
+            <Thumbs :data="topList" />
+        </scroll-view>
     </div>
-    
 </template>
 <style scoped lang="scss">
-
 .container {
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -53,10 +55,10 @@ onShow(async () => {
         display: flex;
         flex-direction: column;
         overflow: auto;
-        max-height: 77vh;
+        max-height: 76vh;
         position: relative;
 
-       
+
     }
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { WallHavenData } from '~/types'
+import type { WallHavenPreview } from '~/types'
 defineProps<{
-    data: WallHavenData[]
+    data: WallHavenPreview[]
 }>()
 
 </script>
@@ -9,16 +9,18 @@ defineProps<{
     <div class="thumbs">
         <section class="thumb-listing-page">
             <div class="thumb" v-for="item in data" :key="item.id">
-                <img class="thumb-img" :src="item.thumbs.small">
-                <div class="thumb-info">
-                    <div class="wall-favs">
-                        <div>{{ item.favorites }}</div>
-                        <img class="favs-img" src="/static/images/star.png">
-                    </div>
+                <navigator :url="`../pages/preview?id=${item.id}`">
+                    <img class="thumb-img" :src="item.preview">
+                    <div class="thumb-info">
+                        <div class="wall-favs">
+                            <div>{{ item.favorites }}</div>
+                            <img class="favs-img" src="/static/images/star.png">
+                        </div>
 
-                    <div class="wall-res">{{ `${item.dimension_x}x${item.dimension_y}` }}</div>
-                    <div class="png">{{ item.file_type?.split('/')?.at(-1) }}</div>
-                </div>
+                        <div class="wall-res">{{ item.dimension }}</div>
+                        <div class="png">{{ item.file_type }}</div>
+                    </div>
+                </navigator>
             </div>
         </section>
     </div>
@@ -89,4 +91,5 @@ defineProps<{
             }
         }
     }
-}</style>
+}
+</style>
