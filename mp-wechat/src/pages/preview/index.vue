@@ -5,7 +5,13 @@ onLoad((query)=>{
 })
 </script>
 <template>
-    <div>
-        Preview 
+    <div class="container">
+         
     </div>
 </template>
+<style scoped lang="scss">
+.container{
+    $text-color:white;
+    color: $text-color;
+}
+</style>

@@ -1,35 +1,17 @@
 {
 	"pages": [
 		{
-			"path": "pages/toplist/index",
-			"style": {
-				"navigationBarTitleText": "wallhaven"
-			}
+			"path": "pages/toplist/index"
 		},{
-			"path": "pages/random/index",
-            "style": {
-                "navigationBarTitleText": "wallhaven"
-            }
+			"path": "pages/random/index"
 		},{
-			"path": "pages/latest/index",
-            "style": {
-                "navigationBarTitleText": "wallhaven"
-            }
+			"path": "pages/latest/index"
 		},{
-			"path": "pages/hot/index",
-            "style": {
-                "navigationBarTitleText": "wallhaven"
-            }
+			"path": "pages/hot/index"
 		},{
-			"path": "pages/preview/index",
-            "style": {
-                "navigationBarTitleText": "wallhaven"
-            }
+			"path": "pages/preview/index"
 		},{
-			"path": "pages/mine/index",
-            "style": {
-                "navigationBarTitleText": "wallhaven"
-            }
+			"path": "pages/mine/index"
 		}
 	],
 	"globalStyle": {

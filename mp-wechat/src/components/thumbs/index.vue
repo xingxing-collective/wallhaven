@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { WallHavenPreview } from '~/types'
+import type { WallHavenThumb } from '~/types'
 defineProps<{
-    data: WallHavenPreview[]
+    data: WallHavenThumb[]
 }>()
 
 </script>
 <template>
     <div class="thumbs">
         <section class="thumb-listing-page">
-            <div class="thumb" v-for="item in data" :key="item.id">
-                <navigator :url="`../pages/preview?id=${item.id}`">
+            <div class="thumb" v-for="item in data" :key="item.id" >
+                <navigator :url="`/pages/preview/index?id=${item.id}`">
                     <img class="thumb-img" :src="item.preview">
                     <div class="thumb-info">
                         <div class="wall-favs">

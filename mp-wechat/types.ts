@@ -11,7 +11,7 @@ type Tag = {
     purity: Purity
 }
 
-export type WallHavenPreview = {
+export type WallHavenThumb = {
     [key in keyof Pick<WallHavenData, 'id' | 'favorites' | 'file_type'>]: string
 } & {
     preview: string

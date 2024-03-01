@@ -1,5 +1,5 @@
 import { ofetch } from '@/composables/ofetch'
-import type { WallHavenPreview, WallHavenResponse } from '~/types'
+import type { WallHavenThumb, WallHavenResponse } from '~/types'
 
 const baseURL = import.meta.env.VITE_WALLHAVEN_URL;
 const apiURL = import.meta.env.VITE_WALLHAVEN_API_URL;
@@ -16,7 +16,7 @@ const WALLHAVENREGEXP = {
 const crawler = async (url: string, regexp: Record<string, RegExp>) => {
     const { data } = await ofetch<string>(url);
     const thumbs = [...data.matchAll(WALLHAVENREGEXP.thumb)].map(x => x[0]);
-    return thumbs.map<WallHavenPreview>(x => ({
+    return thumbs.map<WallHavenThumb>(x => ({
         id: [...x.matchAll(regexp.id)].map(x => x.at(-1)).at(0)!,
         dimension: [...x.matchAll(regexp.dimension)].map(x => x.at(-1)).at(0)!,
         file_type: [...x.matchAll(regexp.file_type)].map(x => x.at(-1)).at(0)!,
@@ -32,6 +32,14 @@ export const useTopList = (page: number = 1) => {
 
 export const useLatest = async (page: number = 1) => {
     return crawler(`${baseURL}/latest?page=${page}`, WALLHAVENREGEXP)
+}
+
+export const useHot = async (page: number = 1) => {
+   return crawler(`${baseURL}/hot?page=${page}`, WALLHAVENREGEXP)
+}
+
+export const useRandom = async (page: number = 1) => {
+    return crawler(`${baseURL}/random?page=${page}`, WALLHAVENREGEXP)
 }
 
 export const getByImageId = async (id: string) => {
