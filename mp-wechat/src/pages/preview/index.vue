@@ -8,7 +8,14 @@ import { getByImageId } from '@/composables/wallhaven';
 const wallhaven = ref<WallHavenData>();
 const showcase = ref(true);
 
-const useNavigateBack=()=>{
+const previewImage = (url: string) => {
+    uni.previewImage({
+        current: 0,
+        urls: [url]
+    })
+}
+
+const useNavigateBack = () => {
     uni.navigateBack()
 }
 onLoad(async (query) => {
@@ -27,7 +34,7 @@ onLoad(async (query) => {
         </Header>
         <div class="content">
             <div class="scrollbox">
-                <image class="wallpaper" :src="wallhaven?.path" mode="aspectFit" />
+                <image class="wallpaper" :src="wallhaven?.path" mode="aspectFit" @click="previewImage(wallhaven!.path)" />
             </div>
             <div class="sidebar-toggle">
                 <div :class="['toggle', !showcase ? 'toggle-move' : '']" @click="showcase = !showcase">
@@ -118,6 +125,7 @@ onLoad(async (query) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .extended {
         width: 1.25rem;
         height: 1.25rem;
