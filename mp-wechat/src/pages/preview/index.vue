@@ -27,7 +27,7 @@ onLoad(async (query) => {
         </Header>
         <div class="content">
             <div class="scrollbox">
-                <img class="wallpaper" :src="wallhaven?.path" alt="">
+                <image class="wallpaper" :src="wallhaven?.path" mode="aspectFit" />
             </div>
             <div class="sidebar-toggle">
                 <div :class="['toggle', !showcase ? 'toggle-move' : '']" @click="showcase = !showcase">
