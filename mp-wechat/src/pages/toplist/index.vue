@@ -14,6 +14,14 @@ useTabBar(0);
 
 watch(page, async () => {
     const data = await useTopList(page.value)
+
+    /* const data = Array(24).fill(null).map<WallHavenThumb>((_, i) => ({
+        id: '856dlk',
+        favorites: '542',
+        file_type: 'PNG',
+        preview: 'https://th.wallhaven.cc/small/85/856dlk.jpg',
+        dimension: '2427 x 1404'
+    })); */
     topList.value.push(...data)
 }, {
     immediate: true
