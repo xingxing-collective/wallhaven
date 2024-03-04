@@ -23,7 +23,7 @@ export type WallHavenData = {
     id: string
     category: string
     colors: string[]
-    created_at: Date
+    created_at: string
     dimension_x: number
     dimension_y: number
     favorites: number
