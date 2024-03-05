@@ -41,7 +41,7 @@ watch(page, async () => {
     .content {
         display: flex;
         flex-direction: column;
-        overflow: auto;
+        overflow-y: auto;
         max-height: 76vh;
         position: relative;
 

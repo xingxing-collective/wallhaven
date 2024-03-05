@@ -1,14 +1,5 @@
 <template>
-    <div class="header">
+    <div  w-full h-10_dl_5vh flex="~ col-reverse" p-b-0_dl_5rem >
         <slot></slot>
     </div>
 </template>
-<style scoped lang="scss">
-.header {
-    width: 100%;
-    height: 10.5%;
-    display: flex;
-    flex-direction: column-reverse;
-    padding-bottom: 0.5rem;
-}
-</style>

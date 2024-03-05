@@ -5,91 +5,42 @@ defineProps<{
 }>()
 
 </script>
+
 <template>
-    <div class="thumbs">
-        <section class="thumb-listing-page">
-            <div class="thumb" v-for="item in data" :key="item.id" >
+    <div font-mono>
+        <section flex="~ wrap" gap-1rem justify-center>
+            <div class="thumb" w-10rem h-7_dl_5rem flex="~ items-center" justify-center position-relative
+                v-for="item in data" :key="item.id">
                 <navigator :url="`/pages/preview/index?id=${item.id}`">
-                    <img class="thumb-img" :src="item.preview">
-                    <div class="thumb-info">
-                        <div class="wall-favs">
+                    <img w-10rem h-7_dl_5rem object-fill rounded-0_dl_5rem :src="item.preview">
+                    <div  bg="~ #0000002a" w-full position-absolute bottom-0 h-1_dl_25rem font-size-24
+                        font="italic" flex="~ items-center" justify-center gap-2>
+                        <div flex gap-1>
                             <div>{{ item.favorites }}</div>
-                            <img class="favs-img" src="/static/images/star.png">
+                            <img w-0_dl_75rem h-_dl_75rem src="/static/images/star.png">
                         </div>
 
-                        <div class="wall-res">{{ item.dimension }}</div>
-                        <div class="png">{{ item.file_type }}</div>
+                        <div>{{ item.dimension }}</div>
+                        <div v-if="item.file_type" bg="~ #db7c0f" px-0_dl_25 py-0_dl_5 rounded-0_dl_5>{{ item.file_type }}</div>
                     </div>
                 </navigator>
             </div>
         </section>
     </div>
 </template>
+
 <style scoped lang="scss">
-.thumbs {
-    font-family: Arial, Helvetica, sans-serif;
+.thumb {
+    &:nth-child(odd) {
+        padding-right: 0.25rem;
+    }
 
-    .thumb-listing-page {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
+    &:nth-child(even) {
+        padding-left: 0.25rem;
+    }
 
-        .thumb {
-            width: 10rem;
-            height: 7.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-
-            &:nth-child(odd) {
-                padding-right: 0.25rem;
-            }
-
-            &:nth-child(even) {
-                padding-left: 0.25rem;
-            }
-
-            .thumb-img {
-                width: 10rem;
-                height: 7.5rem;
-                object-fit: fill;
-                border-radius: 0.5rem;
-            }
-
-            .thumb-info {
-                font-size: 0.75rem;
-                font-style: italic;
-                display: flex;
-                justify-content: space-evenly;
-                align-items: center;
-                gap: 0.5rem;
-                height: 1.25rem;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                background-color: rgba(0, 0, 0, .165);
-                background-image: linear-gradient(to bottom, rgba(0, 0, 0, .03) 0, rgba(0, 0, 0, .3) 100%);
-
-                .wall-favs {
-                    display: flex;
-                    gap: 0.25rem;
-
-                    .favs-img {
-                        width: 0.75rem;
-                        height: 0.75rem;
-                    }
-                }
-
-                .png {
-
-                    background: #db7c0f;
-                    padding: 1px 2px;
-                    border-radius: 2px;
-                }
-            }
-        }
+    .thumb-info {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, .03) 0, rgba(0, 0, 0, .3) 100%);
     }
 }
 </style>
