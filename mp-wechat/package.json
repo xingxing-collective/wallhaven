@@ -24,7 +24,6 @@
     "@iconify/json": "^2.2.189",
     "@vue/runtime-core": "^3.4.20",
     "@vue/tsconfig": "^0.1.3",
-    "sass": "^1.71.1",
     "typescript": "^4.9.4",
     "unocss": "^0.58.5",
     "unocss-preset-weapp": "^0.58.6",

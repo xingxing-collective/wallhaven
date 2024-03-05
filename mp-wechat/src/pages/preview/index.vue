@@ -65,7 +65,7 @@ onLoad(async (query) => {
                         v-for="item in wallhaven?.colors" :key="item" />
                 </div>
                 <div flex="~ col" border-t="~ 2 dotted #333" w-80vw p-1rem>
-                    <div flex="~ gap-1 items-center" @click="showTags = !showTags">
+                    <div flex="~ gap-0.5 items-center" @click="showTags = !showTags">
                         <div i-ic-sharp-arrow-right v-if="!showTags" w-2rem h-2rem />
                         <div v-else i-ic-twotone-arrow-drop-down w-2rem h-2rem />
                         <div uppercase c-_wn_8cc font-900>Tags</div>
@@ -81,13 +81,13 @@ onLoad(async (query) => {
                     </div>
                 </div>
                 <div flex="~ col" border-t="~ 2 dotted #333" w-80vw p-1rem>
-                    <div flex="~ gap-1 items-center" @click="showProperties = !showProperties">
-                        <div i-ic-sharp-arrow-right v-if="!showTags" w-2rem h-2rem />
+                    <div flex="~ gap-0.5 items-center" @click="showProperties = !showProperties">
+                        <div i-ic-sharp-arrow-right v-if="!showProperties" w-2rem h-2rem />
                         <div v-else i-ic-twotone-arrow-drop-down w-2rem h-2rem />
                         <div uppercase c-_wn_8cc font-900>Properties</div>
                     </div>
-                    <div flex="~ col items-center" gap-0_dl_5rem justify-center v-if="showProperties">
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                    <div flex="~ col items-center" gap-0_dl_5rem pt-1rem justify-center v-if="showProperties">
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Uploader</div>
                             <div flex="~ gap-0.5rem">
                                 <img w-3rem h-3rem :src="wallhaven?.uploader?.avatar['32px']">
@@ -99,28 +99,28 @@ onLoad(async (query) => {
                                 </div>
                             </div>
                         </div>
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Category</div>
                             <div capitalize>{{ wallhaven?.category }}</div>
                         </div>
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Purity</div>
                             <div c-_wn_9f9>{{ wallhaven?.purity }}</div>
                         </div>
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Size</div>
                             <div class="size">{{ (wallhaven!.file_size / 1024 / 1024).toFixed(2) }}MiB-{{
                     wallhaven?.file_type.split('/').at(-1)?.toUpperCase() }}</div>
                         </div>
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Views</div>
                             <div>{{ wallhaven?.views }}</div>
                         </div>
-                        <div flex="~ items-center " w-full gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Favorites</div>
                             <div c-_wn_0cd>{{ wallhaven?.favorites }}</div>
                         </div>
-                        <div flex="~ items-center " w-full bg-_wn_212121 class="link" gap-1_dl_5rem>
+                        <div flex="~ items-center " w-full bg-_wn_212121 class="link" gap-1rem>
                             <div text-right c-_wn_85aaaf w-30%>Link</div>
                             <div bg-_wn_2c2c2c w-70% pt-0_dl_5rem pb-0_dl_5rem text-center>{{ wallhaven?.short_url }}
                             </div>
@@ -132,7 +132,7 @@ onLoad(async (query) => {
     </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .toggle-move {
     position: absolute;
     bottom: env(safe-area-inset-bottom);

@@ -21,39 +21,19 @@ watch(page, async () => {
 
 </script>
 <template>
-    <div class="container">
+    <div h-full c-white font-mono >
         <Header>
             <template>
-                <div class="listing-header">{{ 'Latest' }}</div>
+                <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-2rem font-size-48 font-600>{{ 'Hot' }}</div>
             </template>
         </Header>
-        <scroll-view scroll-y class="content" @scrolltolower="page++;">
+        <scroll-view scroll-y flex="~ col" overflow-y-auto max-h-76vh position-relative   @scrolltolower="page++;" >
             <Thumbs :data="topList" />
         </scroll-view>
     </div>
 </template>
-<style scoped lang="scss">
-.container {
-    height: 100vh;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        max-height: 76vh;
-        position: relative;
-
-    }
-}
-
+<style scoped>
 .listing-header {
-    height: 2.5rem;
-    line-height: 2.5rem;
-    padding-left: 2rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    background-image: radial-gradient(400px 80px at 0px top, rgba(183, 96, 240, .3), transparent);
+    background-image: radial-gradient(400px 80px at 0px top, rgba(240, 96, 96, 0.3), transparent);
 }
 </style>

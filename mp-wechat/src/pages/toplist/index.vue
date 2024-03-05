@@ -24,7 +24,7 @@ watch(page, async () => {
     <div h-full c-white font-mono >
         <Header>
             <template>
-                <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-2rem font-size-1_dl_5rem font-600>{{ 'Toplist' }}</div>
+                <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-2rem font-size-48 font-600>{{ 'Toplist' }}</div>
             </template>
         </Header>
         <scroll-view scroll-y flex="~ col" overflow-y-auto max-h-76vh position-relative   @scrolltolower="page++;" >
@@ -32,7 +32,7 @@ watch(page, async () => {
         </scroll-view>
     </div>
 </template>
-<style scoped lang="scss">
+<style scoped>
 .listing-header {
     background-image: radial-gradient(400px 80px at 0px top, rgba(183, 96, 240, .3), transparent);
 }
