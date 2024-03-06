@@ -27,7 +27,7 @@ watch(page, async () => {
                 <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-2rem font-size-48 font-600>{{ 'Latest' }}</div>
             </template>
         </Header>
-        <scroll-view scroll-y flex="~ col" overflow-y-auto max-h-76vh position-relative   @scrolltolower="page++;" >
+        <scroll-view enable-flex scroll-y flex="~ col" overflow-y-auto max-h-76vh position-relative   @scrolltolower="page++;" >
             <Thumbs :data="topList" />
         </scroll-view>
     </div>
