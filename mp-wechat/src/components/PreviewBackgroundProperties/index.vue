@@ -9,12 +9,12 @@ const showProperties = ref(false);
 
 <template>
     <div flex="~ col" border-t="~ 2 dotted #333" w-80vw p-1rem p-safe>
-        <div flex="~ gap-0.5 items-center" @click="showProperties = !showProperties">
+        <div flex="~ gap-1 items-center" @click="showProperties = !showProperties">
             <div i-ic-sharp-arrow-right v-if="!showProperties" w-2rem h-2rem />
             <div v-else i-ic-twotone-arrow-drop-down w-2rem h-2rem />
             <div uppercase c-_wn_8cc font-900>Properties</div>
         </div>
-        <div flex="~ col items-center" gap-0_dl_5rem pt-1rem justify-center v-if="showProperties">
+        <div flex="~ col items-center gap-1" pt-1rem justify-center v-if="showProperties">
             <div flex="~ items-center " w-full gap-1rem>
                 <div text-right c-_wn_85aaaf w-30%>Uploader</div>
                 <div flex="~ gap-0.5rem">

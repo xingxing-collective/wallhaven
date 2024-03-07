@@ -8,14 +8,14 @@ defineProps<{
 
 <template>
     <div font-mono>
-        <section flex="~ wrap" gap-2 justify-center>
+        <section flex="~ wrap gap-2" justify-center>
             <div class="thumb" w-12rem h-9rem flex="~ items-center" justify-center position-relative
                 v-for="item in data" :key="item.id">
                 <navigator :url="`/pages/preview/index?id=${item.id}`">
                     <img w-12rem h-9rem object-fill rounded-0_dl_5rem :src="item.preview">
                     <div bg="~ #0000002a" w-full position-absolute bottom-0 h-1_dl_25rem font-size-24 font="italic"
                         flex="~ items-center" justify-center gap-2>
-                        <div flex gap-1>
+                        <div flex="~ gap-1">
                             <div>{{ item.favorites }}</div>
                             <img w-0_dl_75rem h-_dl_75rem src="/static/images/star.png">
                         </div>

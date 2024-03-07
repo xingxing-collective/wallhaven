@@ -24,7 +24,11 @@ watch(page, async () => {
     <div h-full c-white font-mono >
         <Header>
             <template>
-                <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-2rem font-size-48 font-600>{{ 'Toplist' }}</div>
+                <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-1rem font-size-48 font-600 flex="~ items-center gap-2">
+                    <div i-material-symbols-light-list-alt-add-outline-rounded w-2rem h-2rem></div>
+                    <div i-material-symbols-light-list-alt-add-rounded w-2rem h-2rem></div>
+                    <div>Toplist</div>
+                </div>
             </template>
         </Header>
         <scroll-view enable-flex scroll-y flex="~ col items-center" overflow-y-auto max-h-76vh position-relative   @scrolltolower="page++;" >
