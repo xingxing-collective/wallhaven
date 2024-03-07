@@ -8,11 +8,11 @@ defineProps<{
 
 <template>
     <div font-mono>
-        <section flex="~ wrap" gap-1rem justify-center>
-            <div class="thumb" w-10rem h-7_dl_5rem flex="~ items-center" justify-center position-relative
+        <section flex="~ wrap" gap-2 justify-center>
+            <div class="thumb" w-12rem h-9rem flex="~ items-center" justify-center position-relative
                 v-for="item in data" :key="item.id">
                 <navigator :url="`/pages/preview/index?id=${item.id}`">
-                    <img w-10rem h-7_dl_5rem object-fill rounded-0_dl_5rem :src="item.preview">
+                    <img w-12rem h-9rem object-fill rounded-0_dl_5rem :src="item.preview">
                     <div bg="~ #0000002a" w-full position-absolute bottom-0 h-1_dl_25rem font-size-24 font="italic"
                         flex="~ items-center" justify-center gap-2>
                         <div flex gap-1>
@@ -31,14 +31,6 @@ defineProps<{
 </template>
 
 <style scoped>
-.thumb:nth-child(odd) {
-    padding-right: 0.25rem;
-}
-
-.thumb:nth-child(even) {
-    padding-left: 0.25rem;
-}
-
 .thumb-info {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .03) 0, rgba(0, 0, 0, .3) 100%);
 }
