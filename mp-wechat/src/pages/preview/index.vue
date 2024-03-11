@@ -24,7 +24,7 @@ const useNavigateBack = () => {
 onLoad(async (query) => {
     const { id } = query!;
     const { data } = await getByImageId(id);
-    wallhaven.value = data.data as WallHavenData;
+    wallhaven.value = data as WallHavenData;
 })
 </script>
 

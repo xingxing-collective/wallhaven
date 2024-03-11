@@ -6,12 +6,9 @@
     "ignoreDeprecations": "5.0",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "~/*": [
-        "./*"
-      ]
+      "@/*": ["./src/*"],
+      "~/*": ["./*"],
+      "ofetch":["../ofetch/src/index"]
     },
     "lib": [
       "esnext",
