@@ -13,9 +13,6 @@
     "lib": [
       "esnext",
       "dom"
-    ],
-    "types": [
-      "@dcloudio/types"
     ]
   },
   "include": [
