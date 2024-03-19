@@ -1,5 +1,5 @@
 <h1 align="center">
-    wallhaven 
+    WALLHAVEN 
 </h1>
 <p align="center">
     The best wallpapers on the Net!
