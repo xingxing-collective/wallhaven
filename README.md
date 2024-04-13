@@ -1,9 +1,11 @@
 <h1 align="center">
-    wallhaven 
+    WALLHAVEN 
 </h1>
 <p align="center">
     The best wallpapers on the Net!
 </p>
+
+[![Wallhaven demo](./.github/assets/demo.png)](https://nuxt.com)
 
 # Overview
 The Project is built with:

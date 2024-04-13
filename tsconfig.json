@@ -6,7 +6,6 @@
         "esModuleInterop": true,
         "strict": true,
         "declaration": true,
-        "types": ["@dcloudio/types"],
         "paths": {
             "ofetch": [
                 "./ofetch/index"

@@ -25,8 +25,6 @@ watch(page, async () => {
         <Header>
             <template>
                 <div class="listing-header"  h-2_dl_5rem line-height-2_dl_5rem pl-1rem font-size-48 font-600 flex="~ items-center gap-2">
-                    <div i-material-symbols-light-list-alt-add-outline-rounded w-2rem h-2rem></div>
-                    <div i-material-symbols-light-list-alt-add-rounded w-2rem h-2rem></div>
                     <div>Toplist</div>
                 </div>
             </template>

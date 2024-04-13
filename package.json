@@ -16,19 +16,9 @@
   },
   "scripts": {
     "dev:mp-wechat": "pnpm run -C mp-wechat dev",
-    "dev:playground": "jiti playground/index"
-  },
-  "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-3081220230817001",
-    "@dcloudio/uni-app-plus": "3.0.0-3081220230817001",
-    "@dcloudio/uni-components": "3.0.0-3081220230817001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-3081220230817001"
+    "build:mp-wechat": "pnpm run -C mp-wechat build"
   },
   "devDependencies": {
-    "@dcloudio/types": "^3.3.2",
-    "@dcloudio/uni-automator": "3.0.0-3081220230817001",
-    "@dcloudio/uni-cli-shared": "3.0.0-3081220230817001",
-    "@dcloudio/uni-stacktracey": "3.0.0-3081220230817001",
     "jiti": "^1.21.0"
   }
 }
