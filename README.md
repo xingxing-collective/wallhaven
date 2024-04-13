@@ -5,7 +5,9 @@
     The best wallpapers on the Net!
 </p>
 
+<p align="center">
 [![Wallhaven demo](./.github/assets/demo.png)](https://nuxt.com)
+</p>
 
 # Overview
 The Project is built with:
