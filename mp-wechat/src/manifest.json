@@ -4,7 +4,7 @@
     "versionCode" : "100",
     "transformPx" : false,
     "mp-weixin" : {
-        "appid" : "wxce21dc86d9b6c534",
+        "appid" : "",
         "setting" : {
             "urlCheck" : false
         },
