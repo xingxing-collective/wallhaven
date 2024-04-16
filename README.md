@@ -6,7 +6,10 @@
 </p>
 
 <div align="center">
-    <img src="./.github/assets/demo.png" />
+    <img src="./.github/assets/demo.png" style="object-fit:fill;" width="200" />
+    <img src="./.github/assets/demo1.png" style="object-fit:fill;" width="200" />
+    <img src="./.github/assets/demo2.png" style="object-fit:fill;" width="200" />
+    <img src="./.github/assets/demo3.png" style="object-fit:fill;" width="200" />
 </div>
 
 # Overview
