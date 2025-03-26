@@ -1,15 +1,19 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "esModuleInterop": true,
-        "strict": true,
-        "declaration": true,
-        "paths": {
-            "ofetch": [
-                "./ofetch/index"
-            ]
-        }
+  "compilerOptions": {
+    "sourceMap": true,
+    "allowJs": true,
+    "ignoreDeprecations": "5.0",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./*"]
     }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }
