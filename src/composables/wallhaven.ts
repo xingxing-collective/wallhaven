@@ -1,8 +1,7 @@
-import type { WallHavenThumb, WallHavenResponse } from '~/types'
-import { ofetch } from '../../../ofetch/src/index'
+import type { WallHavenThumb } from '~/types'
 
-const baseURL = import.meta.env.VITE_WALLHAVEN_URL;
-const apiURL = import.meta.env.VITE_WALLHAVEN_API_URL;
+const baseURL = import.meta.env.VITE_WALLHAVEN_URL!;
+const apiURL = import.meta.env.VITE_WALLHAVEN_API_URL!;
 
 const WALLHAVENREGEXP = {
     thumb: /<figure[^>]*>(.*?)<\/figure>/g,
@@ -14,14 +13,16 @@ const WALLHAVENREGEXP = {
 }
 
 const crawler = async (url: string, regexp: Record<string, RegExp>) => {
-    const data = await ofetch<string>(url);
-    const thumbs = [...data.matchAll(WALLHAVENREGEXP.thumb)].map(x => x[0]);
+    const data = await uni.request({
+        url
+    });
+    const thumbs = Array.from(data.data.toString().matchAll(WALLHAVENREGEXP.thumb)).map(x => x[0]);
     return thumbs.map<WallHavenThumb>(x => ({
-        id: [...x.matchAll(regexp.id)].map(x => x.at(-1)).at(0)!,
-        dimension: [...x.matchAll(regexp.dimension)].map(x => x.at(-1)).at(0)!,
-        file_type: [...x.matchAll(regexp.file_type)].map(x => x.at(-1)).at(0)!,
-        preview: [...x.matchAll(regexp.preview)].map(x => x.at(-1)).at(0)!,
-        favorites: [...x.matchAll(regexp.favorites)].map(x => x.at(-1)).at(0)!,
+        id: Array.from(x.matchAll(regexp.id)).map(x => x.at(-1)).at(0)!,
+        dimension: Array.from(x.matchAll(regexp.dimension)).map(x => x.at(-1)).at(0)!,
+        file_type: Array.from(x.matchAll(regexp.file_type)).map(x => x.at(-1)).at(0)!,
+        preview: Array.from(x.matchAll(regexp.preview)).map(x => x.at(-1)).at(0)!,
+        favorites: Array.from(x.matchAll(regexp.favorites)).map(x => x.at(-1)).at(0)!,
     }))
 
 }
@@ -43,5 +44,7 @@ export const useRandom = async (page: number = 1) => {
 }
 
 export const getByImageId = async (id: string) => {
-    return ofetch<WallHavenResponse>(`${apiURL}/w/${id}`);
+    return uni.request({
+        url: `${apiURL}/wallpaper/${id}`
+    });
 }
