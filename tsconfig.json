@@ -3,6 +3,7 @@
     "sourceMap": true,
     "allowJs": true,
     "ignoreDeprecations": "5.0",
+    "moduleResolution": "bundler",
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
