@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { WallHavenData } from '~/types';
+import type { WallHavenData } from '@/types';
 defineProps<{ wallhaven: WallHavenData, showcase: boolean }>()
 
 

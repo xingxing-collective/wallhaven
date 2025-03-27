@@ -2,26 +2,31 @@
 	"pages": [
 		{
 			"path": "pages/toplist/index"
-		},{
+		},
+		{
 			"path": "pages/random/index"
-		},{
+		},
+		{
 			"path": "pages/latest/index"
-		},{
+		},
+		{
 			"path": "pages/hot/index"
-		},{
+		},
+		{
 			"path": "pages/preview/index"
-		},{
+		},
+		{
 			"path": "pages/mine/index"
 		}
 	],
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#000000",
-		"navigationStyle":"custom",
+		"navigationStyle": "custom",
 		"backgroundColor": "#000000",
-		"backgroundTextStyle":"dark"
+		"backgroundTextStyle": "dark"
 	},
 	"tabBar": {
-		"custom":true,
+		"custom": true,
 		"list": [
 			{
 				"pagePath": "pages/toplist/index",
@@ -30,16 +35,18 @@
 			{
 				"pagePath": "pages/random/index",
 				"text": "Random"
-
-			},{
+			},
+			{
 				"pagePath": "pages/latest/index",
-                "text": "Latest"
-			},{
+				"text": "Latest"
+			},
+			{
 				"pagePath": "pages/hot/index",
-                "text": "Hot"
-			},{
+				"text": "Hot"
+			},
+			{
 				"pagePath": "pages/mine/index",
-                "text": "Mine"
+				"text": "Mine"
 			}
 		]
 	},

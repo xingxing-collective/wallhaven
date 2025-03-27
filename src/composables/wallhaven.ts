@@ -1,4 +1,4 @@
-import type { WallHavenThumb } from '~/types'
+import type { WallHavenThumb } from '@/types'
 
 const baseURL = import.meta.env.VITE_WALLHAVEN_URL!;
 const apiURL = import.meta.env.VITE_WALLHAVEN_API_URL!;

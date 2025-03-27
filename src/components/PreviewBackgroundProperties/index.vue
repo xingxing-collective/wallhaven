@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { WallHavenData } from '~/types';
+import type { WallHavenData } from '@/types';
 
 defineProps<{ wallhaven: WallHavenData }>()
 
@@ -22,7 +22,7 @@ const showProperties = ref(false);
                     <div flex="~ col" justify-between>
                         <div c-_wn_08A6F6>{{ wallhaven?.uploader?.username }}</div>
                         <div>
-                            {{ new Date(wallhaven!.created_at.replaceAll('-', '/')).toLocaleDateString() }}
+                            {{ new Date(wallhaven!.created_at.replace('-', '/')).toLocaleDateString() }}
                         </div>
                     </div>
                 </div>
