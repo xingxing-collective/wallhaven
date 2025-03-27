@@ -44,7 +44,8 @@ export const useRandom = async (page: number = 1) => {
 }
 
 export const getByImageId = async (id: string) => {
-    return uni.request({
+    const response= await uni.request({
         url: `${apiURL}/wallpaper/${id}`
     });
+    return response.data as any;
 }
