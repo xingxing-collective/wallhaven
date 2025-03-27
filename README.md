@@ -27,8 +27,7 @@ The Project is built with:
 Navigate into your projects directory and get your environment variables ready:
 
 ```shell
-cd wallhaven/mp-wechat/
-mv .env.template .env.local
+mv .env.template .env
 ```
 
 ### Install dependencies
