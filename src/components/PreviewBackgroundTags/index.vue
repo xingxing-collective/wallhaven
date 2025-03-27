@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { WallHavenData } from '~/types';
+import type { WallHavenData } from '@/types';
 
 defineProps<{ wallhaven: WallHavenData }>()
 

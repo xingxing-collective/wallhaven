@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { WallHavenThumb } from '~/types'
+import type { WallHavenThumb } from '@/types'
 defineProps<{
     data: WallHavenThumb[]
 }>()

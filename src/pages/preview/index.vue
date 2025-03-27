@@ -5,7 +5,7 @@ import PreviewBackground from '@/components/PreviewBackground/index.vue'
 import Tags from '@/components/PreviewBackgroundTags/index.vue'
 import Properties from '@/components/PreviewBackgroundProperties/index.vue'
 import { ref } from 'vue';
-import type { WallHavenData } from '~/types';
+import type { WallHavenData } from '@/types';
 import { getByImageId } from '@/composables/wallhaven';
 
 const wallhaven = ref<WallHavenData>();

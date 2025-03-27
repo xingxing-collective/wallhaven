@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { useTabBar } from "@/composables/useTabBar";
 import { useRandom } from "@/composables/wallhaven";
-import { ref } from "vue";
+import { ref,watch } from "vue";
 import Thumbs from "@/components/thumbs/index.vue";
-import type { WallHavenThumb } from "~/types";
-import { watch } from "vue";
+import type { WallHavenThumb } from "@/types";
 import Header from "@/components/header/index.vue";
 
 const topList = ref<Array<WallHavenThumb>>([]);
